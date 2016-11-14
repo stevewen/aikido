@@ -1,8 +1,9 @@
 #include <aikido/planner/ompl/GeometricStateSpace.hpp>
+
+#include <memory>
 #include <aikido/planner/ompl/StateSampler.hpp>
 #include <aikido/constraint/Sampleable.hpp>
 #include <dart/common/StlHelpers.hpp>
-#include <boost/make_shared.hpp>
 
 using dart::common::make_unique;
 
@@ -199,7 +200,7 @@ GeometricStateSpace::allocDefaultStateSampler() const
 {
   auto generator = mSampler->createSampleGenerator();
   auto stateSampler =
-      boost::make_shared<StateSampler>(this, std::move(generator));
+      std::make_shared<StateSampler>(this, std::move(generator));
 
   return stateSampler;
 }

@@ -1,3 +1,5 @@
+#include <functional>
+
 #include <aikido/planner/ompl/CRRTConnect.hpp>
 #include <aikido/planner/ompl/GeometricStateSpace.hpp>
 #include <ompl/base/goals/GoalSampleableRegion.h>
@@ -34,10 +36,12 @@ void CRRTConnect::setup(void) {
   if (!mGoalTree)
     mGoalTree.reset(new ::ompl::NearestNeighborsGNAT<Motion *>);
 
+  using std::placeholders::_1;
+  using std::placeholders::_2;
   mStartTree->setDistanceFunction(
-      boost::bind(&CRRTConnect::distanceFunction, this, _1, _2));
+      std::bind(&CRRTConnect::distanceFunction, this, _1, _2));
   mGoalTree->setDistanceFunction(
-      boost::bind(&CRRTConnect::distanceFunction, this, _1, _2));
+      std::bind(&CRRTConnect::distanceFunction, this, _1, _2));
 }
 
 //=============================================================================

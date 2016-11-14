@@ -10,10 +10,10 @@ aikido_check_package(geometry_msgs "rviz" "geometry_msgs")
 # TODO: Workaround because find_package(interactive_markers) imports "tests"
 # and "run_tests" targets that conflict with the targets defined by Aikido.
 find_path(interactive_markers_INCLUDE_DIRS interactive_markers
-  PATHS "/opt/ros/indigo/include"
+  PATHS "/opt/ros/indigo/include" "/opt/ros/kinetic/include"
   PATH_SUFFIXES "interactive_markeres/interactive_marker_client.h")
 find_library(interactive_markers_LIBRARIES interactive_markers
-  PATHS "/opt/ros/indigo/lib")
+  PATHS "/opt/ros/indigo/lib" "opt/ros/kinetic/lib")
 evaluate_condition(interactive_markers_FOUND
   interactive_markers_INCLUDE_DIRS AND interactive_markers_LIBRARIES)
 aikido_check_package(interactive_markers "rviz" "interactive_markers")

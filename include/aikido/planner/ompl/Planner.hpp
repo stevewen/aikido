@@ -1,6 +1,8 @@
 #ifndef AIKIDO_OMPL_OMPLPLANNER_HPP_
 #define AIKIDO_OMPL_OMPLPLANNER_HPP_
 
+#include <memory>
+
 #include "../../distance/DistanceMetric.hpp"
 #include "../../statespace/StateSpace.hpp"
 #include "../../statespace/Interpolator.hpp"
@@ -13,7 +15,6 @@
 #include <ompl/base/ProblemDefinition.h>
 #include <ompl/base/SpaceInformation.h>
 #include <ompl/base/goals/GoalRegion.h>
-#include <boost/make_shared.hpp>
 
 namespace aikido {
 namespace planner {
@@ -221,7 +222,7 @@ trajectory::InterpolatedPtr planCRRTConnect(
 /// \param _si Information about the planning space
 /// \param _goalTestable A Testable constraint that can determine if a given state is a goal state
 /// \param _goalSampler A Sampleable capable of sampling states that satisfy _goalTestable
-boost::shared_ptr<::ompl::base::GoalRegion>
+std::shared_ptr<::ompl::base::GoalRegion>
 getGoalRegion(::ompl::base::SpaceInformationPtr _si,
               constraint::TestablePtr _goalTestable,
               constraint::SampleablePtr _goalSampler);

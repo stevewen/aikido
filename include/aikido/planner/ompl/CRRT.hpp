@@ -1,6 +1,8 @@
 #ifndef AIKIDO_PLANNER_OMPL_CRRT_HPP_
 #define AIKIDO_PLANNER_OMPL_CRRT_HPP_
 
+#include <memory>
+
 #include <ompl/base/Planner.h>
 #include <ompl/geometric/planners/PlannerIncludes.h>
 #include <ompl/datastructures/NearestNeighbors.h>
@@ -147,7 +149,7 @@ protected:
 
 
   /// A nearest-neighbor datastructure representing a tree of motions */
-  using TreeData = boost::shared_ptr<::ompl::NearestNeighbors<Motion *>>;
+  using TreeData = std::shared_ptr<::ompl::NearestNeighbors<Motion *>>;
 
   /// A nearest-neighbors datastructure containing the tree of motions
   TreeData mStartTree;

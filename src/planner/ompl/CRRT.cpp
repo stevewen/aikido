@@ -1,3 +1,5 @@
+#include <functional>
+
 #include <aikido/planner/ompl/CRRT.hpp>
 #include <aikido/planner/ompl/GeometricStateSpace.hpp>
 #include <ompl/base/goals/GoalSampleableRegion.h>
@@ -17,7 +19,7 @@ CRRT::CRRT(const ::ompl::base::SpaceInformationPtr &_si,
       mMaxDistance(0.1), mLastGoalMotion(nullptr), mMaxStepsize(0.1), mMinStepsize(1e-4) {
 
   auto ss =
-      boost::dynamic_pointer_cast<GeometricStateSpace>(si_->getStateSpace());
+      std::dynamic_pointer_cast<GeometricStateSpace>(si_->getStateSpace());
   if (!ss) {
     throw std::invalid_argument(
         "CRRT algorithm requires a GeometricStateSpace");
@@ -34,7 +36,7 @@ CRRT::CRRT(const ::ompl::base::SpaceInformationPtr &_si,
                                 &CRRT::getProjectionResolution, "0.:1.:10000.");
 Planner::declareParam<double>("min_step", this, &CRRT::setMinStateDifference,
                                 &CRRT::getMinStateDifference, "0.:1.:10000.");
-  
+
 }
 
 //=============================================================================
@@ -86,7 +88,7 @@ void CRRT::setGoalBias(double _goalBias)
 
 //=============================================================================
 double CRRT::getGoalBias() const
-{ 
+{
   return mGoalBias;
 }
 
@@ -120,19 +122,19 @@ void CRRT::setProjectionResolution(double _resolution)
 
 //=============================================================================
 double CRRT::getProjectionResolution(void) const
-{ 
-  return mMaxStepsize; 
+{
+  return mMaxStepsize;
 }
 
 //=============================================================================
-void CRRT::setMinStateDifference(double _mindist) 
-{ 
+void CRRT::setMinStateDifference(double _mindist)
+{
   mMinStepsize = _mindist;
 }
 
 //=============================================================================
 double CRRT::getMinStateDifference(void) const
-{ 
+{
   return mMinStepsize;
 }
 
@@ -145,7 +147,9 @@ void CRRT::setup(void) {
   if (!mStartTree)
     mStartTree.reset(new ::ompl::NearestNeighborsGNAT<Motion *>);
 
-  mStartTree->setDistanceFunction(boost::bind(&CRRT::distanceFunction, this, _1, _2));
+  using std::placeholders::_1;
+  using std::placeholders::_2;
+  mStartTree->setDistanceFunction(std::bind(&CRRT::distanceFunction, this, _1, _2));
 }
 
 //=============================================================================
@@ -325,7 +329,7 @@ CRRT::constrainedExtend(const ::ompl::base::PlannerTerminationCondition &ptc,
       break;
     }
     prevDistToTarget = distToTarget;
-    distToTarget = si_->distance(cmotion->state, gstate); 
+    distToTarget = si_->distance(cmotion->state, gstate);
   }
 
   return bestmotion;
