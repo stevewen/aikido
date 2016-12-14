@@ -90,7 +90,7 @@ bool convertAssimpMeshToROSTriangleList(
       triangle_list->push_back(ros_vertex);
     }
   }
-  return false;
+  return true;
 }
 
 bool convertShape(BoxShape const &shape, Marker *marker,
@@ -171,13 +171,12 @@ bool convertShape(MeshShape const &shape, Marker *marker,
 
     for (unsigned int imesh = 0; imesh < scene->mNumMeshes; ++imesh) {
       if (!convertAssimpMeshToROSTriangleList(*scene->mMeshes[imesh],
-                                              &marker->points)) {
-        return false;
+                                              &marker->points)) { 
+	return false;
       }
     }
     return true;
   }
-
   return false; // Everything failed!
 }
 
