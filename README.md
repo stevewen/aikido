@@ -10,9 +10,22 @@ optionally integrates with [ROS], through the suite of `aikido_ros` packages, fo
 execution on real robots.
 
 ### Dependencies
-AIKIDO depends on [CMake], [Boost], [DART] \(version 6.1 or above), [OMPL], and the
-Python development headers (`python-dev` on Debian systems). [DART] and AIKIDO both
-make heavy use of C++11 and require a modern compiler.
+
+AIKIDO makes heavy use of C++11 and require a modern compiler. In addition,
+AIKIDO requires the following dependenies for basic functionality:
+
+- [CMake], version 2.8.12 or above
+- [Boost]
+- [DART], version 6.1.0 or above
+
+AIKIDO has several optional components that have additional dependencies. The
+full list of optional dependencies are:
+
+- **API Documentation**: Doxygen
+- **`planning_ompl` Component:** [OMPL], version 1.0.0 or above
+- **`perception` Component:** ROS packages `geometry_msgs`, `roscpp`,
+  `std_msgs`, `tf`, `visualization_msgs` packages, for ROS `indigo` or above
+- **`rviz` Component:** `rviz`, for ROS `indigo` or above
 
 ### Installation (Standalone)
 Once the dependencies are installed, you can build AIKIDO using [CMake]:

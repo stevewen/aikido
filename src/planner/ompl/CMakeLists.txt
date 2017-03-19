@@ -1,13 +1,22 @@
-#============================================================================== # Dependencies
+#==============================================================================
+# Dependencies
 #
 find_package(OMPL QUIET)
 if(OMPL_FOUND)
-  message(STATUS "Looking for OMPL - version ${OMPL_VERSION} found")
+  if("${OMPL_VERSION}" VERSION_LESS "1.0.0")
+    message(STATUS "Looking for OMPL - found version ${OMPL_VERSION}, but"
+                   " version 1.0.0 or later is required, skipping planer_ompl"
+                   " component")
+    return()
+  else()
+    message(STATUS "Looking for OMPL - version ${OMPL_VERSION} found")
+  endif()
 else()
   message(STATUS
     "Looking for OMPL - NOT found, skipping planner_ompl component")
   return()
 endif()
+
 
 #==============================================================================
 # Libraries
