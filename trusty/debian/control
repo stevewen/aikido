@@ -250,7 +250,7 @@ Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
          libaikido0-dev-prerelease,
-         libaikido0-util-dev-prerelease,
+         libaikido0-common-dev-prerelease,
          libaikido0-statespace-dev-prerelease,
          libaikido0-trajectory-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
@@ -278,7 +278,7 @@ Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
          libaikido0-dev-prerelease,
-         libaikido0-util-dev-prerelease,
+         libaikido0-common-dev-prerelease,
          libaikido0-statespace-dev-prerelease,
          libaikido0-constraint-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
@@ -306,7 +306,7 @@ Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
          libaikido0-dev-prerelease,
-         libaikido0-util-dev-prerelease,
+         libaikido0-common-dev-prerelease,
          libaikido0-statespace-dev-prerelease,
          libaikido0-distance-dev-prerelease,
          libaikido0-trajectory-dev-prerelease,
