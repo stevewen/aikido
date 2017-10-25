@@ -1,4 +1,4 @@
-Source: aikido0
+Source: aikido0-prerelease
 Priority: extra
 Maintainer: Jeongseok Lee <jslee02@gmail.com>
 Build-Depends: debhelper (>= 9),
@@ -27,7 +27,7 @@ Homepage: https://github.com/personalrobotics/aikido
 Vcs-Git: git://github.com/personalrobotics/aikido.git
 Vcs-Browser: https://github.com/personalrobotics/aikido
 
-Package: libaikido0
+Package: libaikido0-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -39,12 +39,12 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-dev
+Package: libaikido0-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0 (= ${binary:Version}),
+         libaikido0-prerelease (= ${binary:Version}),
          libboost-filesystem-dev,
          libdart6-optimizer-nlopt-dev,
          libdart6-utils-dev
@@ -55,7 +55,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-common
+Package: libaikido0-common-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -67,13 +67,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-common-dev
+Package: libaikido0-common-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-common (= ${binary:Version}),
+         libaikido0-dev-prerelease,
+         libaikido0-common-prerelease (= ${binary:Version}),
          libboost-filesystem-dev,
          libyaml-cpp-dev,
          libtinyxml2-dev
@@ -84,7 +84,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-io
+Package: libaikido0-io-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -96,13 +96,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-io-dev
+Package: libaikido0-io-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-io (= ${binary:Version}),
+         libaikido0-dev-prerelease,
+         libaikido0-io-prerelease (= ${binary:Version}),
          libboost-filesystem-dev,
          libyaml-cpp-dev,
          libtinyxml2-dev
@@ -113,7 +113,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-rviz
+Package: libaikido0-rviz-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -125,13 +125,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-rviz-dev
+Package: libaikido0-rviz-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-rviz (= ${binary:Version}),
+         libaikido0-dev-prerelease,
+         libaikido0-rviz-prerelease (= ${binary:Version}),
          ros-indigo-roscpp,
          ros-indigo-geometry-msgs,
          ros-indigo-interactive-markers,
@@ -145,7 +145,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-statespace
+Package: libaikido0-statespace-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -157,13 +157,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-statespace-dev
+Package: libaikido0-statespace-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-statespace (= ${binary:Version})
+         libaikido0-dev-prerelease,
+         libaikido0-statespace-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -171,7 +171,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-perception
+Package: libaikido0-perception-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -183,14 +183,14 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-perception-dev
+Package: libaikido0-perception-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-util-dev,
-         libaikido0-perception (= ${binary:Version}),
+         libaikido0-dev-prerelease,
+         libaikido0-util-dev-prerelease,
+         libaikido0-perception-prerelease (= ${binary:Version}),
          libdart6-utils-urdf-dev,
          libyaml-cpp-dev,
          ros-indigo-roscpp,
@@ -205,7 +205,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-distance
+Package: libaikido0-distance-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -217,14 +217,14 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-distance-dev
+Package: libaikido0-distance-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-statespace-dev,
-         libaikido0-distance (= ${binary:Version})
+         libaikido0-dev-prerelease,
+         libaikido0-statespace-dev-prerelease,
+         libaikido0-distance-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -232,7 +232,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-trajectory
+Package: libaikido0-trajectory-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -244,15 +244,15 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-trajectory-dev
+Package: libaikido0-trajectory-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-util-dev,
-         libaikido0-statespace-dev,
-         libaikido0-trajectory (= ${binary:Version})
+         libaikido0-dev-prerelease,
+         libaikido0-util-dev-prerelease,
+         libaikido0-statespace-dev-prerelease,
+         libaikido0-trajectory-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -260,7 +260,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-constraint
+Package: libaikido0-constraint-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -272,15 +272,15 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-constraint-dev
+Package: libaikido0-constraint-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-util-dev,
-         libaikido0-statespace-dev,
-         libaikido0-constraint (= ${binary:Version})
+         libaikido0-dev-prerelease,
+         libaikido0-util-dev-prerelease,
+         libaikido0-statespace-dev-prerelease,
+         libaikido0-constraint-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -288,7 +288,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-planner
+Package: libaikido0-planner-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -300,18 +300,18 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-planner-dev
+Package: libaikido0-planner-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-util-dev,
-         libaikido0-statespace-dev,
-         libaikido0-distance-dev,
-         libaikido0-trajectory-dev,
-         libaikido0-constraint-dev,
-         libaikido0-planner (= ${binary:Version})
+         libaikido0-dev-prerelease,
+         libaikido0-util-dev-prerelease,
+         libaikido0-statespace-dev-prerelease,
+         libaikido0-distance-dev-prerelease,
+         libaikido0-trajectory-dev-prerelease,
+         libaikido0-constraint-dev-prerelease,
+         libaikido0-planner-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -319,7 +319,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-planner-ompl
+Package: libaikido0-planner-ompl-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -331,13 +331,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-planner-ompl-dev
+Package: libaikido0-planner-ompl-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-planner-dev,
-         libaikido0-planner-ompl (= ${binary:Version}),
+         libaikido0-planner-dev-prerelease,
+         libaikido0-planner-ompl-prerelease (= ${binary:Version}),
          libompl-dev
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
@@ -346,7 +346,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-planner-parabolic
+Package: libaikido0-planner-parabolic-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -358,13 +358,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-planner-parabolic-dev
+Package: libaikido0-planner-parabolic-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-planner-dev,
-         libaikido0-planner-parabolic (= ${binary:Version})
+         libaikido0-planner-dev-prerelease,
+         libaikido0-planner-parabolic-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -372,7 +372,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-control
+Package: libaikido0-control-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -384,15 +384,15 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-control-dev
+Package: libaikido0-control-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-statespace-dev,
-         libaikido0-trajectory-dev,
-         libaikido0-control (= ${binary:Version})
+         libaikido0-dev-prerelease,
+         libaikido0-statespace-dev-prerelease,
+         libaikido0-trajectory-dev-prerelease,
+         libaikido0-control-prerelease (= ${binary:Version})
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
@@ -400,7 +400,7 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-control-ros
+Package: libaikido0-control-ros-prerelease
 Section: libs
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
@@ -412,13 +412,13 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-control-ros-dev
+Package: libaikido0-control-ros-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-control-dev,
-         libaikido0-control-ros (= ${binary:Version}),
+         libaikido0-control-dev-prerelease,
+         libaikido0-control-ros-prerelease (= ${binary:Version}),
          ros-indigo-roscpp,
          ros-indigo-trajectory-msgs,
          ros-indigo-control-msgs,
@@ -431,25 +431,25 @@ Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization 
  planning. AIKIDO optionally integrates with ROS, through the suite of
  aikido_ros packages, for execution on real robots.
 
-Package: libaikido0-all-dev
+Package: libaikido0-all-dev-prerelease
 Section: libdevel
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
-         libaikido0-dev,
-         libaikido0-common-dev,
-         libaikido0-constraint-dev,
-         libaikido0-control-dev,
-         libaikido0-control-ros-dev,
-         libaikido0-distance-dev,
-         libaikido0-io-dev,
-         libaikido0-perception-dev,
-         libaikido0-planner-dev,
-         libaikido0-planner-ompl-dev,
-         libaikido0-planner-parabolic-dev,
-         libaikido0-rviz-dev,
-         libaikido0-statespace-dev,
-         libaikido0-trajectory-dev
+         libaikido0-dev-prerelease,
+         libaikido0-common-dev-prerelease,
+         libaikido0-constraint-dev-prerelease,
+         libaikido0-control-dev-prerelease,
+         libaikido0-control-ros-dev-prerelease,
+         libaikido0-distance-dev-prerelease,
+         libaikido0-io-dev-prerelease,
+         libaikido0-perception-dev-prerelease,
+         libaikido0-planner-dev-prerelease,
+         libaikido0-planner-ompl-dev-prerelease,
+         libaikido0-planner-parabolic-dev-prerelease,
+         libaikido0-rviz-dev-prerelease,
+         libaikido0-statespace-dev-prerelease,
+         libaikido0-trajectory-dev-prerelease
 Description: Artificial Intelligence for Kinematics, Dynamics, and Optimization - Development Files
  AIKIDO is a C++ library, complete with Python bindings, for solving robotic
  motion planning and decision making problems. This library is tightly
