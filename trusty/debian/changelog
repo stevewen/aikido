@@ -1,0 +1,58 @@
+aikido0 (0.1.0) unstable; urgency=medium
+
+  * Common
+  * - Added VanDerCorput::getLength()
+  * - Added ExecutorThread and ExecutorMultiplexer
+  * - Changed splitEngine() to set default numOutputs to 1
+  * State Space
+  * - Added MetaSkeletonStateSpaceSaver
+  * - Added WeldJoint
+  * - Improved real vector space classes to take advantage of Eigen's fixed-size objects
+  * Constraint
+  * - Added SE2BoxConstraint
+  * - Added satisfiable tolerance parameter to TSR constructor
+  * - Added ConstantSampler
+  * - Renamed SO2Sampleable to SO2UniformSampler
+  * Perception
+  * - Added simulation world env to ApriltagsModule
+  * Planner
+  * - Added parabolic smoother
+  * - Added wrapper for OMPL path simplifier
+  * - Added support OMPL 1.2.0 and above
+  * - Changed to SnapePlanner to return nullptr when planning fails
+  * - Refactored parabolic timer
+  * IO
+  * - Added KinBody parser
+  * - Improved yaml extension
+  * RViz
+  * - Added TSR visualizer
+  * - Made FrameId a variable
+  * - Fixed inconsistent function signature
+  * Control
+  * - Added toSplineJointTrajectory() that can controls only specifying joints
+  * - Added RosPositionCommandExecutor
+  * - Added BarretthandPositionCommandExecutor
+  * - Added RosJointStateClient
+  * - Added trajectory conversions between Aikido's and ROS's
+  * - Improved RosTrajectoryExecutor to use helper function for waiting for action server
+  * - Improved (~)Executor::step() not to lock
+  * - Fixed renaming sping to step
+  * - Fixed to work on real hardware
+  * - Removed StateSpace from RosTrajectoryExecutor
+  * Build & Testing & ETC
+  * - Added Findinteractive_markers.cmake
+  * - Improved to build without warnings
+  * - Improved to enforce to follow code formatting#211
+  * - Switched to codecov for online code coverage reporting
+  * - Increased the required minimum version of DART to 6.2
+  * - Changed to test Aikido for both of release and debug modes, and on macOS
+  * - Splitted util namespace into common and io
+  * - Fixed build issues on macOS
+
+ -- Youngsun Kim <yskim041@gmail.com>  Mon, 2 Oct 2017 16:28:00 -0700
+
+aikido0 (0.0.2.ppa6~trusty) trusty; urgency=medium
+
+  * Initial release to the PRL's PPA
+
+ -- Jeongseok Lee <jslee02@gmail.com>  Tue, 26 Sep 2017 23:59:00 -0700
