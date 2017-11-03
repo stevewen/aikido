@@ -125,6 +125,15 @@ bool computeJointVelocityFromTwist(
           ((velocityUpperLimits[i] - _padding) - position) / _timestep);
   }
 
+  if ((velocityUpperLimits - velocityLowerLimits).minCoeff() < 0)
+  {
+    Eigen::IOFormat fmt(3, 0, " ", " ", "", "", "[", "]");
+    dtwarn << "Lower limits " << velocityLowerLimits.format(fmt)
+           << " exceed upper limits: " << velocityUpperLimits.format(fmt)
+           << '\n';
+    return false;
+  }
+
   const auto problem = std::make_shared<Problem>(numDofs);
   problem->setLowerBounds(velocityLowerLimits);
   problem->setUpperBounds(velocityUpperLimits);
