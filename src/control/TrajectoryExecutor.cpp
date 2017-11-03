@@ -20,10 +20,10 @@ TrajectoryExecutor::~TrajectoryExecutor()
 }
 
 //==============================================================================
-void TrajectoryExecutor::queue(trajectory::TrajectoryPtr traj)
+void TrajectoryExecutor::queue(std::function<void()> func)
 {
   std::lock_guard<std::mutex> lock(mTrajectoryQueueMutex);
-  mTrajectoryQueue.push(std::move(traj));
+  mFuncQueue.push(func);
 }
 
 //==============================================================================
@@ -41,13 +41,15 @@ void TrajectoryExecutor::executeFromQueue()
 
   while (mRunning.load() && ::ros::ok())
   {
-    trajectory::TrajectoryPtr traj;
+    std::function<void()> func;
 
     std::unique_lock<std::mutex> lock(mTrajectoryQueueMutex);
-    if (!mTrajectoryQueue.empty())
+    if (!mFuncQueue.empty())
     {
-      traj = mTrajectoryQueue.front();
-      mTrajectoryQueue.pop();
+      func = mFuncQueue.front();
+      mFuncQueue.pop();
+      // traj = mTrajectoryQueue.front();
+      // mTrajectoryQueue.pop();
     }
     else
     {
@@ -60,8 +62,8 @@ void TrajectoryExecutor::executeFromQueue()
     // that the start of this trajectory is close to the current state
     // See https://github.com/personalrobotics/rewd_controllers/issues/6
 
-    if (traj)
-      execute(traj).wait();
+    if (func)
+      func();
 
     rate.sleep();
   }

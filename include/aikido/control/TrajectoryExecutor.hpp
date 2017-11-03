@@ -32,7 +32,7 @@ public:
   /// the queue or currently being executed, the trajectory should be executed
   /// immediately.
   /// \param traj Trajectory to queue and execute
-  void queue(trajectory::TrajectoryPtr _traj);
+  void queue(std::function<void()> func);
 
   /// Toggle whether trajectories should be automatically dequeued and executed.
   /// \param flag Whether to automatically execute trajectories from the queue
@@ -46,6 +46,9 @@ protected:
 
   /// Thread target for automatically checking queue and executing trajectories
   void executeFromQueue();
+
+  /// Queue of func calls
+  std::queue<std::function<void()>> mFuncQueue;
 
   /// Queue of trajectories
   std::queue<trajectory::TrajectoryPtr> mTrajectoryQueue;
