@@ -18,6 +18,7 @@ set(sources
   dart.cpp
   GeometricStateSpace.cpp
   GoalRegion.cpp
+  LRAstar.cpp
   MotionValidator.cpp
   Planner.cpp
   StateSampler.cpp
