@@ -664,9 +664,6 @@ void LRAstar::rewireLazyBand(TG &qRewire, TF &qExtend, TF &qFrontier)
             continue;
           }
 
-          auto iterQ = qRewire.find(v);
-          assert(iterQ != qRewire.end());
-
           qRewire.erase(v);
 
           g[v].node.updateCost(g[u].node.cost());
