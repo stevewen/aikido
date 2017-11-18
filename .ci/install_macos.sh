@@ -1,2 +1,2 @@
 brew install boost
-brew install dartsim/dart/dartsim6 --without-planning --without-gui
+brew install dartsim/dart/dartsim6 --without-collision-bullet --without-collision-ode --without-planning --without-gui
